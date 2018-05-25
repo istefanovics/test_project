@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import Gloss
 
 class NetworkManager: NSObject {
     
@@ -19,7 +20,7 @@ class NetworkManager: NSObject {
     static let sharedInstance = NetworkManager()
     private let serverUrl = "http://jwt.hostly.hu/"
     
-    func getGroups(atpage: Int, limit: Int, completionHandler: @escaping (GroupList, Error?) -> Void)
+    func getGroups(atpage: Int, limit: Int, completionHandler: @escaping (GroupList?, Error?) -> Void)
     {
         let params = ["page" : atpage,
                       "limit" : limit]
@@ -28,11 +29,19 @@ class NetworkManager: NSObject {
         
         Alamofire.request(requestURl)
             .responseJSON { response in
+
+                guard response.result.error == nil else {
+                    print(response.result.error!)
+                    completionHandler(nil, response.result.error)
+                    return
+                }
                 
+                let json = response.result.value as! JSON
+                let groupList = GroupList(json: json)
+                    
+                completionHandler(groupList, nil)
         }
     }
-    
-
     
     private func generateRequestUrl(type: RequestType, params: [String: Any]) -> String {
         

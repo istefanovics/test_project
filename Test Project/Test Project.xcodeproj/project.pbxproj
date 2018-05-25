@@ -13,7 +13,6 @@
 		720FF6EB20B80D0100237EF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 720FF6E920B80D0100237EF4 /* LaunchScreen.storyboard */; };
 		720FF6F420B8155900237EF4 /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720FF6F320B8155900237EF4 /* GroupViewController.swift */; };
 		720FF6F920B815E700237EF4 /* GroupCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720FF6F720B815E700237EF4 /* GroupCollectionViewCell.swift */; };
-		720FF6FA20B815E700237EF4 /* GroupCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 720FF6F820B815E700237EF4 /* GroupCollectionViewCell.xib */; };
 		720FF6FD20B821EE00237EF4 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720FF6FC20B821EE00237EF4 /* NetworkManager.swift */; };
 		720FF70020B823DE00237EF4 /* NetworkModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720FF6FF20B823DE00237EF4 /* NetworkModels.swift */; };
 		B8027D6AEE2B013174B425A5 /* Pods_Test_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3284E0AAF4C0EAB7DA236BA3 /* Pods_Test_Project.framework */; };
@@ -31,7 +30,6 @@
 		720FF6EC20B80D0100237EF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		720FF6F320B8155900237EF4 /* GroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
 		720FF6F720B815E700237EF4 /* GroupCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCollectionViewCell.swift; sourceTree = "<group>"; };
-		720FF6F820B815E700237EF4 /* GroupCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupCollectionViewCell.xib; sourceTree = "<group>"; };
 		720FF6FC20B821EE00237EF4 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		720FF6FF20B823DE00237EF4 /* NetworkModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,7 +100,6 @@
 			isa = PBXGroup;
 			children = (
 				720FF6F720B815E700237EF4 /* GroupCollectionViewCell.swift */,
-				720FF6F820B815E700237EF4 /* GroupCollectionViewCell.xib */,
 			);
 			path = GroupCell;
 			sourceTree = "<group>";
@@ -200,7 +197,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				720FF6FA20B815E700237EF4 /* GroupCollectionViewCell.xib in Resources */,
 				720FF6EB20B80D0100237EF4 /* LaunchScreen.storyboard in Resources */,
 				720FF6E820B80D0100237EF4 /* Assets.xcassets in Resources */,
 				720FF6E620B80D0000237EF4 /* Main.storyboard in Resources */,

@@ -28,7 +28,7 @@ struct GroupListItem: JSONDecodable {
     let id: Int?
     let name: String?
     let image: String?
-    let members: [Member]?
+    let members: [Member]
     
     // MARK: - Deserialization
     
@@ -55,7 +55,7 @@ struct GroupList: JSONDecodable {
     let responseCode: String?
     let filtered: Int?
     let total: Int?
-    let list: [GroupListItem]?
+    let list: [GroupListItem]
     
     // MARK: - Deserialization
     
