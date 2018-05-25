@@ -18,49 +18,31 @@ class NetworkManager: NSObject {
     }
     
     static let sharedInstance = NetworkManager()
-    private let serverUrl = "http://jwt.hostly.hu/"
+    private let serverUrlString = "http://jwt.hostly.hu"
     
     func getGroups(atpage: Int, limit: Int, completionHandler: @escaping (GroupList?, Error?) -> Void)
     {
+        var responseGroupList: GroupList?
+        var responseError : Error?
+        
         let params = ["page" : atpage,
                       "limit" : limit]
         
-        let requestURl = self.generateRequestUrl(type: .groupList, params: params)
+        let requestURL = "\(serverUrlString)/list.php"
         
-        Alamofire.request(requestURl)
-            .responseJSON { response in
-
-                guard response.result.error == nil else {
-                    print(response.result.error!)
-                    completionHandler(nil, response.result.error)
-                    return
-                }
-                
+        Alamofire.request(requestURL, method: .post, parameters: params, encoding: URLEncoding.queryString, headers: nil).responseJSON { response in
+            
+            if let error = response.result.error
+            {
+                responseError = error
+            }
+            else
+            {
                 let json = response.result.value as! JSON
-                let groupList = GroupList(json: json)
-                    
-                completionHandler(groupList, nil)
+                responseGroupList = GroupList(json: json)
+            }
+            
+            completionHandler(responseGroupList, responseError)
         }
-    }
-    
-    private func generateRequestUrl(type: RequestType, params: [String: Any]) -> String {
-        
-        var requestUrl = ""
-        var requestName = ""
-        
-        switch type {
-        case .groupList:
-            requestName =  "list.php"
-        case .groupDetail:
-            requestName =  "show.php"
-        }
-        
-        requestUrl = serverUrl + requestName
-        
-        params.forEach {
-            requestUrl += "?\($0)=\($1)"
-        }
-
-        return requestUrl
     }
 }

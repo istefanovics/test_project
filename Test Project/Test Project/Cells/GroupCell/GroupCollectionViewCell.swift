@@ -15,6 +15,9 @@ class GroupCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var groupImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var memberCountLabel: UILabel!
+    
+    var favoriteActionBlock: ((GroupCollectionViewCell)->Void)?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -25,8 +28,13 @@ class GroupCollectionViewCell: UICollectionViewCell {
         self.setRoundedCorners(forView: self.contentView, cornerSize: 15.0)
     }
     
-    @IBAction func starButtonTapped(_ sender: Any) {
+    @IBAction func starButtonTapped(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
         
+        if let favoriteActionBlock  = self.favoriteActionBlock
+        {
+            favoriteActionBlock(self)
+        }
     }
     
     private func setRoundedCorners(forView view:UIView, cornerSize: CGFloat) {

@@ -25,14 +25,18 @@ class GroupViewController: UIViewController {
     func loadData(page: Int) {
         NetworkManager.sharedInstance.getGroups(atpage: 1, limit: 30) { (groupList, error) in
             
-            if let groupList = groupList
+            if let error = error
+            {
+                self.showError(message: error.localizedDescription)
+            }
+            else if let groupList = groupList
             {
                 self.groupList = groupList.list
                 self.groupCollectionView.reloadData()
             }
             else
             {
-                
+               self .showError(message: "Failed to load Data")
             }
         }
     }
@@ -46,20 +50,17 @@ class GroupViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func showError(message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        
+        // add an action (button)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+    }
 }
-
-//extension GroupViewController: UICollectionViewDelegate {
-//
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//
-//        let photoObject = self.photos[indexPath.item]
-//        let isUpdateAllowed = self.selectedPhotosScrollView.getSelectedPhotos().count < ICConstants.maxSelectableImageCount || photoObject.isSelected
-//
-//        if isUpdateAllowed {
-//            self.updatePhotoObject(photoObject)
-//        }
-//    }
-//}
 
 extension GroupViewController: UICollectionViewDataSource
 {
@@ -76,26 +77,27 @@ extension GroupViewController: UICollectionViewDataSource
         cell.titleLabel.text = groupItem.name
         cell.memberCountLabel.text = "\(groupItem.members.count) tag"
         
+        if let groupId = groupItem.id
+        {
+            cell.favoriteActionBlock = { cell in
+                
+                if cell.starButton.isSelected
+                {
+                    FaroriteGroupManager.sharedInstance.favoriteGroup(id: groupId)
+                }
+                else
+                {
+                    FaroriteGroupManager.sharedInstance.unfavoriteGroup(id: groupId)
+                }
+            }
+            
+            cell.starButton.isSelected = FaroriteGroupManager.sharedInstance.favoriteState(groupId: groupId)
+        }
+        
         if let imageUrlString = groupItem.image
         {
             cell.groupImageView.sd_setImage(with: URL(string: imageUrlString), placeholderImage: UIImage(named: "placeholder"), completed: nil)
         }
-        
-//        cell.setSelected(isSelected: photos[indexPath.item].isSelected)
-//
-//        let photoObject = self.photos[indexPath.item]
-//
-//        let scale = UIScreen.main.scale
-//        let targetSize = self.collectionView(collectionView, layout: collectionView.collectionViewLayout, sizeForItemAt: indexPath)
-//        let requiredImageSize = CGSize(width: targetSize.width  * scale, height: targetSize.height * scale)
-//
-//        if let asset = photoObject.asset
-//        {
-//            PHImageManager.default().requestImage(for: asset, targetSize: requiredImageSize, contentMode: .aspectFill, options: nil) { (image, info) in
-//
-//                cell.photoImageView.image = image
-//            }
-//        }
         
         return cell
     }
@@ -121,14 +123,4 @@ extension GroupViewController : UICollectionViewDelegateFlowLayout
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return self.sectionInsets.left
     }
-    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-//        return 0.0;
-//    }
 }
-
-
-
-
-
-
