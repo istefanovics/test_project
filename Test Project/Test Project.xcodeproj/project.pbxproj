@@ -8,10 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		720FF6E120B80CFF00237EF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720FF6E020B80CFF00237EF4 /* AppDelegate.swift */; };
-		720FF6E320B80D0000237EF4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720FF6E220B80D0000237EF4 /* ViewController.swift */; };
 		720FF6E620B80D0000237EF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 720FF6E420B80D0000237EF4 /* Main.storyboard */; };
 		720FF6E820B80D0100237EF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 720FF6E720B80D0100237EF4 /* Assets.xcassets */; };
 		720FF6EB20B80D0100237EF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 720FF6E920B80D0100237EF4 /* LaunchScreen.storyboard */; };
+		720FF6F420B8155900237EF4 /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720FF6F320B8155900237EF4 /* GroupViewController.swift */; };
+		720FF6F920B815E700237EF4 /* GroupCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720FF6F720B815E700237EF4 /* GroupCollectionViewCell.swift */; };
+		720FF6FA20B815E700237EF4 /* GroupCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 720FF6F820B815E700237EF4 /* GroupCollectionViewCell.xib */; };
+		720FF6FD20B821EE00237EF4 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720FF6FC20B821EE00237EF4 /* NetworkManager.swift */; };
+		720FF70020B823DE00237EF4 /* NetworkModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720FF6FF20B823DE00237EF4 /* NetworkModels.swift */; };
 		B8027D6AEE2B013174B425A5 /* Pods_Test_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3284E0AAF4C0EAB7DA236BA3 /* Pods_Test_Project.framework */; };
 /* End PBXBuildFile section */
 
@@ -21,11 +25,15 @@
 		7094523C666CC7C71E509209 /* Pods-Test Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Test Project/Pods-Test Project.release.xcconfig"; sourceTree = "<group>"; };
 		720FF6DD20B80CFF00237EF4 /* Test Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Test Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		720FF6E020B80CFF00237EF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		720FF6E220B80D0000237EF4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		720FF6E520B80D0000237EF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		720FF6E720B80D0100237EF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		720FF6EA20B80D0100237EF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		720FF6EC20B80D0100237EF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		720FF6F320B8155900237EF4 /* GroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
+		720FF6F720B815E700237EF4 /* GroupCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCollectionViewCell.swift; sourceTree = "<group>"; };
+		720FF6F820B815E700237EF4 /* GroupCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupCollectionViewCell.xib; sourceTree = "<group>"; };
+		720FF6FC20B821EE00237EF4 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		720FF6FF20B823DE00237EF4 /* NetworkModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,14 +69,58 @@
 		720FF6DF20B80CFF00237EF4 /* Test Project */ = {
 			isa = PBXGroup;
 			children = (
+				720FF6F520B815B500237EF4 /* Cells */,
+				720FF6FB20B821B100237EF4 /* Managers */,
+				720FF6FE20B822DE00237EF4 /* Models */,
+				720FF6F220B8151B00237EF4 /* ViewControllers */,
 				720FF6E020B80CFF00237EF4 /* AppDelegate.swift */,
-				720FF6E220B80D0000237EF4 /* ViewController.swift */,
-				720FF6E420B80D0000237EF4 /* Main.storyboard */,
 				720FF6E720B80D0100237EF4 /* Assets.xcassets */,
-				720FF6E920B80D0100237EF4 /* LaunchScreen.storyboard */,
 				720FF6EC20B80D0100237EF4 /* Info.plist */,
+				720FF6E920B80D0100237EF4 /* LaunchScreen.storyboard */,
+				720FF6E420B80D0000237EF4 /* Main.storyboard */,
 			);
 			path = "Test Project";
+			sourceTree = "<group>";
+		};
+		720FF6F220B8151B00237EF4 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				720FF6F320B8155900237EF4 /* GroupViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		720FF6F520B815B500237EF4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				720FF6F620B815C100237EF4 /* GroupCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		720FF6F620B815C100237EF4 /* GroupCell */ = {
+			isa = PBXGroup;
+			children = (
+				720FF6F720B815E700237EF4 /* GroupCollectionViewCell.swift */,
+				720FF6F820B815E700237EF4 /* GroupCollectionViewCell.xib */,
+			);
+			path = GroupCell;
+			sourceTree = "<group>";
+		};
+		720FF6FB20B821B100237EF4 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				720FF6FC20B821EE00237EF4 /* NetworkManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		720FF6FE20B822DE00237EF4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				720FF6FF20B823DE00237EF4 /* NetworkModels.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		98C674FE7AE203EDDE9CA2AD /* Pods */ = {
@@ -148,6 +200,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				720FF6FA20B815E700237EF4 /* GroupCollectionViewCell.xib in Resources */,
 				720FF6EB20B80D0100237EF4 /* LaunchScreen.storyboard in Resources */,
 				720FF6E820B80D0100237EF4 /* Assets.xcassets in Resources */,
 				720FF6E620B80D0000237EF4 /* Main.storyboard in Resources */,
@@ -164,10 +217,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Test Project/Pods-Test Project-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Gloss/Gloss.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Gloss.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -200,7 +257,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				720FF6E320B80D0000237EF4 /* ViewController.swift in Sources */,
+				720FF70020B823DE00237EF4 /* NetworkModels.swift in Sources */,
+				720FF6FD20B821EE00237EF4 /* NetworkManager.swift in Sources */,
+				720FF6F920B815E700237EF4 /* GroupCollectionViewCell.swift in Sources */,
+				720FF6F420B8155900237EF4 /* GroupViewController.swift in Sources */,
 				720FF6E120B80CFF00237EF4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
