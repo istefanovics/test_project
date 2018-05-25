@@ -15,6 +15,7 @@ class GroupCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var groupImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var memberCountLabel: UILabel!
+    @IBOutlet weak var memberListView: MemberPictureListView!
     
     var favoriteActionBlock: ((GroupCollectionViewCell)->Void)?
     

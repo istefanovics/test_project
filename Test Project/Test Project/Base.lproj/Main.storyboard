@@ -78,34 +78,37 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Üzleti csoport találkozók" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bwJ-Pb-Wac">
-                                                            <rect key="frame" x="8" y="85.5" width="140" height="31.5"/>
+                                                            <rect key="frame" x="8" y="90.5" width="140" height="31.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <color key="textColor" red="0.46666666670000001" green="0.52156862749999999" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15 tag" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yK7-ks-0nV">
-                                                            <rect key="frame" x="8" y="127" width="140" height="16"/>
+                                                            <rect key="frame" x="8" y="132" width="140" height="16"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <color key="textColor" red="0.74901960779999999" green="0.76078431369999999" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <view contentMode="scaleToFill" placeholderIntrinsicWidth="142" placeholderIntrinsicHeight="23" translatesAutoresizingMaskIntoConstraints="NO" id="hrW-lv-jMr">
-                                                            <rect key="frame" x="8" y="153" width="140" height="23"/>
+                                                        <view contentMode="scaleToFill" placeholderIntrinsicWidth="142" placeholderIntrinsicHeight="23" translatesAutoresizingMaskIntoConstraints="NO" id="hrW-lv-jMr" customClass="MemberPictureListView" customModule="Test_Project" customModuleProvider="target">
+                                                            <rect key="frame" x="8" y="158" width="140" height="27"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="27" id="H8E-En-O7e"/>
+                                                            </constraints>
                                                         </view>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="mei-Mx-MMY" firstAttribute="width" secondItem="PwY-zM-dr5" secondAttribute="width" multiplier="25:62" id="6ew-5Z-Nwc"/>
                                                         <constraint firstItem="hrW-lv-jMr" firstAttribute="centerX" secondItem="fkx-0K-N4D" secondAttribute="centerX" id="Ig4-Fh-Jwv"/>
-                                                        <constraint firstAttribute="trailing" secondItem="hrW-lv-jMr" secondAttribute="trailing" constant="8" id="NAf-Rm-eG6"/>
+                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hrW-lv-jMr" secondAttribute="trailing" constant="8" id="NAf-Rm-eG6"/>
                                                         <constraint firstItem="PwY-zM-dr5" firstAttribute="top" secondItem="fkx-0K-N4D" secondAttribute="top" constant="14" id="Q9V-Pc-qa0"/>
                                                         <constraint firstItem="hrW-lv-jMr" firstAttribute="top" secondItem="yK7-ks-0nV" secondAttribute="bottom" constant="10" id="QDJ-Do-GHS"/>
                                                         <constraint firstAttribute="trailing" secondItem="bwJ-Pb-Wac" secondAttribute="trailing" constant="8" id="RJN-kO-meA"/>
                                                         <constraint firstItem="mei-Mx-MMY" firstAttribute="leading" secondItem="fkx-0K-N4D" secondAttribute="leading" constant="10" id="V9D-L6-aIG"/>
                                                         <constraint firstAttribute="trailing" secondItem="yK7-ks-0nV" secondAttribute="trailing" constant="8" id="YXz-cs-6jl"/>
-                                                        <constraint firstItem="bwJ-Pb-Wac" firstAttribute="top" secondItem="PwY-zM-dr5" secondAttribute="bottom" constant="10" id="b72-cC-zuc"/>
-                                                        <constraint firstItem="hrW-lv-jMr" firstAttribute="leading" secondItem="fkx-0K-N4D" secondAttribute="leading" constant="8" id="c82-bx-4uN"/>
+                                                        <constraint firstItem="bwJ-Pb-Wac" firstAttribute="top" relation="greaterThanOrEqual" secondItem="PwY-zM-dr5" secondAttribute="bottom" constant="10" id="b72-cC-zuc"/>
+                                                        <constraint firstItem="hrW-lv-jMr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fkx-0K-N4D" secondAttribute="leading" constant="8" id="c82-bx-4uN"/>
                                                         <constraint firstItem="bwJ-Pb-Wac" firstAttribute="leading" secondItem="fkx-0K-N4D" secondAttribute="leading" constant="8" id="cf6-zN-jPa"/>
                                                         <constraint firstItem="bwJ-Pb-Wac" firstAttribute="centerX" secondItem="fkx-0K-N4D" secondAttribute="centerX" id="d4e-uE-LnE"/>
                                                         <constraint firstItem="PwY-zM-dr5" firstAttribute="width" secondItem="fkx-0K-N4D" secondAttribute="width" multiplier="62:158" id="fDU-lB-p3G"/>
@@ -113,6 +116,7 @@
                                                         <constraint firstItem="PwY-zM-dr5" firstAttribute="centerX" secondItem="fkx-0K-N4D" secondAttribute="centerX" id="hm9-o9-Jee"/>
                                                         <constraint firstItem="yK7-ks-0nV" firstAttribute="leading" secondItem="fkx-0K-N4D" secondAttribute="leading" constant="8" id="ibA-4K-JB8"/>
                                                         <constraint firstItem="mei-Mx-MMY" firstAttribute="top" secondItem="fkx-0K-N4D" secondAttribute="top" constant="18" id="url-s7-ajk"/>
+                                                        <constraint firstAttribute="bottom" secondItem="hrW-lv-jMr" secondAttribute="bottom" constant="10" id="wqz-2d-1VV"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -129,6 +133,7 @@
                                             <outlet property="containerView" destination="fkx-0K-N4D" id="aMA-Wa-VzW"/>
                                             <outlet property="groupImageView" destination="PwY-zM-dr5" id="d4W-JX-oIs"/>
                                             <outlet property="memberCountLabel" destination="yK7-ks-0nV" id="R1b-2I-g1r"/>
+                                            <outlet property="memberListView" destination="hrW-lv-jMr" id="mTj-QS-RhW"/>
                                             <outlet property="starButton" destination="mei-Mx-MMY" id="gOw-7W-uxD"/>
                                             <outlet property="titleLabel" destination="bwJ-Pb-Wac" id="gil-Ta-Zvm"/>
                                         </connections>

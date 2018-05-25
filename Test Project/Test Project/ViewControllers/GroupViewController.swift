@@ -99,6 +99,17 @@ extension GroupViewController: UICollectionViewDataSource
             cell.groupImageView.sd_setImage(with: URL(string: imageUrlString), placeholderImage: UIImage(named: "placeholder"), completed: nil)
         }
         
+        cell.memberListView.imageURLs = groupItem.members.enumerated().map({(offset, member: Member) -> String in
+            if let imageUrl = member.image
+            {
+                return imageUrl
+            }
+            else
+            {
+                return ""
+            }
+        })
+        
         return cell
     }
 }
