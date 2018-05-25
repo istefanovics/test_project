@@ -8,9 +8,9 @@
 
 import UIKit
 
-class FaroriteGroupManager: NSObject {
+class FavoriteGroupManager: NSObject {
     
-    static let sharedInstance = FaroriteGroupManager()
+    static let sharedInstance = FavoriteGroupManager()
     
     var favoritedGroupIds = [Int]()
     private let storeKey = "FavoritedGroupsStoreKey"

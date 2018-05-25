@@ -36,7 +36,7 @@ class GroupViewController: UIViewController {
             }
             else
             {
-               self .showError(message: "Failed to load Data")
+               self.showError(message: "Failed to load Data")
             }
         }
     }
@@ -83,15 +83,15 @@ extension GroupViewController: UICollectionViewDataSource
                 
                 if cell.starButton.isSelected
                 {
-                    FaroriteGroupManager.sharedInstance.favoriteGroup(id: groupId)
+                    FavoriteGroupManager.sharedInstance.favoriteGroup(id: groupId)
                 }
                 else
                 {
-                    FaroriteGroupManager.sharedInstance.unfavoriteGroup(id: groupId)
+                    FavoriteGroupManager.sharedInstance.unfavoriteGroup(id: groupId)
                 }
             }
             
-            cell.starButton.isSelected = FaroriteGroupManager.sharedInstance.favoriteState(groupId: groupId)
+            cell.starButton.isSelected = FavoriteGroupManager.sharedInstance.favoriteState(groupId: groupId)
         }
         
         if let imageUrlString = groupItem.image
