@@ -14,9 +14,14 @@
 		720FF6F420B8155900237EF4 /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720FF6F320B8155900237EF4 /* GroupViewController.swift */; };
 		720FF6F920B815E700237EF4 /* GroupCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720FF6F720B815E700237EF4 /* GroupCollectionViewCell.swift */; };
 		720FF6FD20B821EE00237EF4 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720FF6FC20B821EE00237EF4 /* NetworkManager.swift */; };
-		720FF70020B823DE00237EF4 /* NetworkModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720FF6FF20B823DE00237EF4 /* NetworkModels.swift */; };
+		720FF70020B823DE00237EF4 /* DataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720FF6FF20B823DE00237EF4 /* DataModels.swift */; };
 		720FF70220B8819B00237EF4 /* FavoriteGroupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720FF70120B8819B00237EF4 /* FavoriteGroupManager.swift */; };
 		720FF70520B8A6F800237EF4 /* MemberPictureListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720FF70420B8A6F800237EF4 /* MemberPictureListView.swift */; };
+		720FF70920B9249800237EF4 /* GroupDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720FF70820B9249700237EF4 /* GroupDetailViewController.swift */; };
+		720FF70B20B9366A00237EF4 /* ManagementCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720FF70A20B9366A00237EF4 /* ManagementCollectionViewCell.swift */; };
+		720FF71120B9527A00237EF4 /* FullSizeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720FF71020B9527A00237EF4 /* FullSizeCollectionView.swift */; };
+		720FF71320B95A4D00237EF4 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720FF71220B95A4D00237EF4 /* UIViewControllerExtension.swift */; };
+		720FF71520B95B3A00237EF4 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720FF71420B95B3A00237EF4 /* UIViewExtension.swift */; };
 		B8027D6AEE2B013174B425A5 /* Pods_Test_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3284E0AAF4C0EAB7DA236BA3 /* Pods_Test_Project.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,9 +38,14 @@
 		720FF6F320B8155900237EF4 /* GroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
 		720FF6F720B815E700237EF4 /* GroupCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCollectionViewCell.swift; sourceTree = "<group>"; };
 		720FF6FC20B821EE00237EF4 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		720FF6FF20B823DE00237EF4 /* NetworkModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModels.swift; sourceTree = "<group>"; };
+		720FF6FF20B823DE00237EF4 /* DataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModels.swift; sourceTree = "<group>"; };
 		720FF70120B8819B00237EF4 /* FavoriteGroupManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteGroupManager.swift; sourceTree = "<group>"; };
 		720FF70420B8A6F800237EF4 /* MemberPictureListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberPictureListView.swift; sourceTree = "<group>"; };
+		720FF70820B9249700237EF4 /* GroupDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailViewController.swift; sourceTree = "<group>"; };
+		720FF70A20B9366A00237EF4 /* ManagementCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagementCollectionViewCell.swift; sourceTree = "<group>"; };
+		720FF71020B9527A00237EF4 /* FullSizeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullSizeCollectionView.swift; sourceTree = "<group>"; };
+		720FF71220B95A4D00237EF4 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		720FF71420B95B3A00237EF4 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +81,7 @@
 		720FF6DF20B80CFF00237EF4 /* Test Project */ = {
 			isa = PBXGroup;
 			children = (
+				720FF70C20B94FDC00237EF4 /* Extensions */,
 				720FF70320B8A65900237EF4 /* CustomViews */,
 				720FF6F520B815B500237EF4 /* Cells */,
 				720FF6FB20B821B100237EF4 /* Managers */,
@@ -89,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				720FF6F320B8155900237EF4 /* GroupViewController.swift */,
+				720FF70820B9249700237EF4 /* GroupDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -105,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				720FF6F720B815E700237EF4 /* GroupCollectionViewCell.swift */,
+				720FF70A20B9366A00237EF4 /* ManagementCollectionViewCell.swift */,
 			);
 			path = GroupCell;
 			sourceTree = "<group>";
@@ -121,7 +134,7 @@
 		720FF6FE20B822DE00237EF4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				720FF6FF20B823DE00237EF4 /* NetworkModels.swift */,
+				720FF6FF20B823DE00237EF4 /* DataModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -130,8 +143,18 @@
 			isa = PBXGroup;
 			children = (
 				720FF70420B8A6F800237EF4 /* MemberPictureListView.swift */,
+				720FF71020B9527A00237EF4 /* FullSizeCollectionView.swift */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		720FF70C20B94FDC00237EF4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				720FF71220B95A4D00237EF4 /* UIViewControllerExtension.swift */,
+				720FF71420B95B3A00237EF4 /* UIViewExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		98C674FE7AE203EDDE9CA2AD /* Pods */ = {
@@ -267,13 +290,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				720FF70020B823DE00237EF4 /* NetworkModels.swift in Sources */,
+				720FF70020B823DE00237EF4 /* DataModels.swift in Sources */,
+				720FF70920B9249800237EF4 /* GroupDetailViewController.swift in Sources */,
 				720FF6FD20B821EE00237EF4 /* NetworkManager.swift in Sources */,
 				720FF70520B8A6F800237EF4 /* MemberPictureListView.swift in Sources */,
+				720FF70B20B9366A00237EF4 /* ManagementCollectionViewCell.swift in Sources */,
 				720FF6F920B815E700237EF4 /* GroupCollectionViewCell.swift in Sources */,
+				720FF71520B95B3A00237EF4 /* UIViewExtension.swift in Sources */,
 				720FF6F420B8155900237EF4 /* GroupViewController.swift in Sources */,
 				720FF6E120B80CFF00237EF4 /* AppDelegate.swift in Sources */,
 				720FF70220B8819B00237EF4 /* FavoriteGroupManager.swift in Sources */,
+				720FF71320B95A4D00237EF4 /* UIViewControllerExtension.swift in Sources */,
+				720FF71120B9527A00237EF4 /* FullSizeCollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

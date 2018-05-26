@@ -36,29 +36,22 @@ class GroupViewController: UIViewController {
             }
             else
             {
-               self.showError(message: "Failed to load Data")
+               self.showError(message: "Failed to load the Data")
             }
         }
     }
 
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
-    func showError(message: String) {
-        let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.alert)
         
-        // add an action (button)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-        
-        // show the alert
-        self.present(alert, animated: true, completion: nil)
+        if let detailViewController = segue.destination as? GroupDetailViewController{
+            
+            if let indexPath = self.groupCollectionView.indexPathsForSelectedItems?[0] , let selectedGroupId = self.groupList[indexPath.row].id
+            {
+                detailViewController.groupId = selectedGroupId
+            }
+        }
     }
 }
 
@@ -111,6 +104,13 @@ extension GroupViewController: UICollectionViewDataSource
         })
         
         return cell
+    }
+}
+
+extension GroupViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "OpenDetailPage", sender: self)
     }
 }
 

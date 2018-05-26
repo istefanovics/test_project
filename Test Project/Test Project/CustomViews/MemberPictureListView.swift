@@ -90,7 +90,7 @@ class MemberPictureListView: UIView {
                 imageView.frame = calculatedFrame
                 lastItemFrame = calculatedFrame
                 
-                self.setRoundedCorners(forView: imageView, cornerSize: imageHeight / 2)
+                imageView.roundCorners(cornerSize: imageHeight / 2)
             }
         }
     }
@@ -115,12 +115,5 @@ class MemberPictureListView: UIView {
         }
         
         return calculatedWidth
-    }
-    
-    // MARK: - Helper
-    
-    private func setRoundedCorners(forView view:UIView, cornerSize: CGFloat) {
-        view.layer.cornerRadius = cornerSize;
-        view.layer.masksToBounds = true;
     }
 }

@@ -20,9 +20,9 @@ class NetworkManager: NSObject {
     static let sharedInstance = NetworkManager()
     private let serverUrlString = "http://jwt.hostly.hu"
     
-    func getGroups(atpage: Int, limit: Int, completionHandler: @escaping (GroupList?, Error?) -> Void)
+    func getGroups(atpage: Int, limit: Int, completionHandler: @escaping (GroupListResponse?, Error?) -> Void)
     {
-        var responseGroupList: GroupList?
+        var responseGroupList: GroupListResponse?
         var responseError : Error?
         
         let params = ["page" : atpage,
@@ -39,7 +39,31 @@ class NetworkManager: NSObject {
             else
             {
                 let json = response.result.value as! JSON
-                responseGroupList = GroupList(json: json)
+                responseGroupList = GroupListResponse(json: json)
+            }
+            
+            completionHandler(responseGroupList, responseError)
+        }
+    }
+    
+    func getDetail(forGroupId id: Int , completionHandler: @escaping (GroupDetailResponse?, Error?) -> Void)
+    {
+        var responseGroupList: GroupDetailResponse?
+        var responseError : Error?
+        
+        let params = ["id" : id]
+        let requestURL = "\(serverUrlString)/show.php"
+        
+        Alamofire.request(requestURL, method: .post, parameters: params, encoding: URLEncoding.queryString, headers: nil).responseJSON { response in
+            
+            if let error = response.result.error
+            {
+                responseError = error
+            }
+            else
+            {
+                let json = response.result.value as! JSON
+                responseGroupList = GroupDetailResponse(json: json)
             }
             
             completionHandler(responseGroupList, responseError)
